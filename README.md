@@ -25,6 +25,12 @@ The goals / steps of this project are the following:
 [image7]: ./traffic_signs/sign3.png "Traffic Sign 1"
 [image8]: ./traffic_signs/stopsign.png "Traffic Sign 1"
 [image9]: ./traffic_signs/unlimited.png "Traffic Sign 1"
+[image10]: ./output_images/result10.png "Traffic Sign 1"
+[image11]: ./output_images/resultexc.png "Traffic Sign 1"
+[image12]: ./output_images/resultstop.png "Traffic Sign 1"
+[image13]: ./output_images/resultunlimi.png "Traffic Sign 1"
+[image14]: ./output_images/resultarrow.png "Traffic Sign 1"
+[image15]: ./output_images/result80.png "Traffic Sign 1"
 
 
 ## Rubric Points
@@ -103,11 +109,9 @@ My final model results were:
 * test set accuracy of  0.875
 
 If a well known architecture was chosen:
-* What architecture was chosen? LeNet
-* Why did you believe it would be relevant to the traffic sign application? 
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
-
+I chose LeNet architecture because I noticed in the course that it was very powerful and reached high levels
+of accuracy with very few epochs. This was confirmed with my tests and the model was successfully trained,
+reaching over 90% validation accuracy and a testing accuracy not too far behind (85%).
 ###Test a Model on New Images
 
 ####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
@@ -125,23 +129,22 @@ The code for making predictions on my final model is located in the tenth cell o
 
 Here are the results of the prediction:
 
+![alt text][image10]
+![alt text][image11]
+![alt text][image12]
+![alt text][image13]
+![alt text][image14]
+![alt text][image15]
 
+For each row of images, the left most image is the image that needs to be classified.
+The classification result is shown on the top of each image row. The integer array displays
+classified labels ordered by classification certainty. The float array shows the probability of each
+label.
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 4 of the 5 traffic signs it was supposed to know, 
+which gives an accuracy of 80%. This is similar to the accuracy on the test set of 85%.
+The mistake it made with the "80" sign is understandable. It confused the 3 to be an 8.
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
-
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ... 
+When giving the model an unknown image (here "10") one can see that it still was able to pick up all signs
+that are very similar (round with red borders). Which means that the model has built good spacial and color
+features in its layers.
